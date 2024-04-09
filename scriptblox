@@ -1259,7 +1259,7 @@ MakeWindow({
     KeySystem = true,
     Title = "Key System",
     Description = "No Scope 2021",
-    KeyLink = "",
+    KeyLink = "https://discord.gg/QuphTZFpmA",
     Keys = {"keyjgfeihefnm22","Projeto"},
     Notifi = {
       Notifications = true,
