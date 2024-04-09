@@ -1242,12 +1242,14 @@ Progress through the two links like normal, without using bypassing software or 
 It's that simple! We hope you enjoy your trial, redeem more if you like after your trial has expired
 ]]
    
-   local distance = Value3
+     local distance = Value3
    local height = Value2
    local speed = Value1
             -- made By projeto lka scriptblox.com --
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/REDzHUB/LibraryV2/main/redzLib")))()
-
+waito(0.1)
+local l = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/dxhooknotify/src.lua", true))()
+wait(1)
 MakeWindow({
   Hub = {
     Title = "Projeto LKA - No Scope (2021)",
@@ -1271,7 +1273,7 @@ MakeWindow({
 local Main = MakeTab({Name = "Logs"})
 
 local Label = AddTextLabel(Main, "a")
-SetLabel(Label, "Script Made by Projeto lka")
+SetLabel(Label, "Script Made by Projeto LKA")
 wait(1)
 SetLabel(Label, "Check User... 🔎")
 wait(1)
@@ -1325,6 +1327,8 @@ SetLabel(Label, "Loading Workspace Script... (11234/12783) 🌍")
 wait(0.1)
 SetLabel(Label, "Loading Workspace Script... (11942/12783) 🌍")
 wait(0.1)
+l:Notify("Workspace 🌍","Sucess Load !",3)
+wait(0.1)
 SetLabel(Label, "Workspace Script Finish 🌍")
 wait(1)
 SetLabel(Label, "Loading ReplicatedStorange Script... (0/3853) 🛠")
@@ -1355,6 +1359,8 @@ SetLabel(Label, "Loading ReplicatedStorange Script... (3594/3853) 🛠")
 wait(0.1)
 SetLabel(Label, "Loading ReplicatedStorange Script... (3853/3853) 🛠")
 wait(0.1)
+l:Notify("ReplicatedStorange 🛠","Sucess Load !",3)
+wait(0.1)
 SetLabel(Label, "Loading ReplicatedStorange Finish 🛠")
 wait(1)
 SetLabel(Label, "Loading ServerStorange game... (0/1934 🔩")
@@ -1374,6 +1380,8 @@ wait(0.1)
 SetLabel(Label, "Loading ServerStorange game... (1794/1934 🔩")
 wait(0.1)
 SetLabel(Label, "Loading ServerStorange game... (1934/1934 🔩")
+wait(0.1)
+l:Notify("ServerStorange 🔩","Sucess Load !",3)
 wait(0.1)
 SetLabel(Label, "Loading ServerStorange game Finish 🔩")
 wait(1)
@@ -1439,6 +1447,8 @@ SetLabel(Label, "Loading ServerScript... (25394/28439) ⚙")
 wait(0.1)
 SetLabel(Label, "Loading ServerScript... (28439/28439) ⚙")
 wait(0.1)
+l:Notify("local Players 👥","Sucess Load !",3)
+wait(0.1)
 SetLabel(Label, "Loading ServerScript... Finish ⚙")
 wait(1)
 SetLabel(Label, "Loading local Players... (0/834) 👥")
@@ -1460,6 +1470,8 @@ wait(1)
 SetLabel(Label, "Check profile... 🔎")
 wait(1)
 SetLabel(Label, "Correct Key Loading Script... ")
+wait(0.1)
+l:Notify("Correct Key 🔑","Loading Script...",5)
 wait(1)
 SetLabel(Label, "Features;")
 wait(3)
@@ -1490,6 +1502,8 @@ FovColor = Color3.fromRGB(102, 45, 145.)
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dqtixz/aimbot/main/Projeto%20LKA%20x%20F%20Hub", true))()
+wait(0.1)
+l:Notify("Script Load !","Aim",3)
  end
 })
 wait(1)
@@ -1509,6 +1523,8 @@ FovColor = Color3.fromRGB(102, 45, 145.)
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dqtixz/aimbot/main/Projeto%20LKA%20x%20F%20Hub", true))()
+wait(0.1)
+l:Notify("Script Load !","Aim",3)
  end
 })
 wait(1)
@@ -1528,6 +1544,8 @@ FovColor = Color3.fromRGB(102, 45, 145.)
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dqtixz/aimbot/main/Projeto%20LKA%20x%20F%20Hub", true))()
+wait(0.1)
+l:Notify("Script Load !","Aim",3)
  end
 })
 wait(0.1)
@@ -1551,6 +1569,8 @@ FovColor = Color3.fromRGB(102, 45, 145.)
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dqtixz/aimbot/main/Projeto%20LKA%20x%20F%20Hub", true))()
+ wait(0.1)
+l:Notify("Script Load !","Aim",3)
  end
 })
 wait(0.1)
@@ -1570,6 +1590,8 @@ FovColor = Color3.fromRGB(102, 45, 145.)
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dqtixz/aimbot/main/Projeto%20LKA%20x%20F%20Hub", true))()
+ wait(0.1)
+l:Notify("Script Load !","Aim",3)
  end
 })
 wait(0.1)
@@ -1589,6 +1611,8 @@ FovColor = Color3.fromRGB(102, 45, 145.)
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dqtixz/aimbot/main/Projeto%20LKA%20x%20F%20Hub", true))()
+wait(0.1)
+l:Notify("Script Load !","Aim",3)
  end
 })
 wait(0.1)
@@ -1802,6 +1826,8 @@ end
 game:GetService("Players").PlayerAdded:Connect(function(newplr)
     coroutine.wrap(Main)(newplr)
 end)
+wait(0.1)
+l:Notify("Visual Script Load","Esp (Rocket)",3)
 end
 })
 
@@ -1927,6 +1953,8 @@ Players.PlayerAdded:Connect(function(v)
         ShowArrow(v)
     end
 end)
+wait(0.1)
+l:Notify("Visual Script Load","Esp (Arrow)",3)
     end
 })
 
@@ -2006,6 +2034,8 @@ game.Players.PlayerAdded:Connect(function(newplr)
         coroutine.wrap(ESP)(newplr)
     end
 end)
+wait(0.1)
+l:Notify("Visual Script Load","Esp (Line)",3)
 end
 })
 
@@ -2018,6 +2048,8 @@ wait(0.1)
 AddButton(Main, {
   Name = "Rejoin Server",
   Callback = function()
+    l:Notify("Alert !","Rejoin Server...",3)
+    wait(0.1)
 local ts = game:GetService("TeleportService")
 local p = game:GetService("Players").LocalPlayer
 ts:Teleport(game.PlaceId, p)
