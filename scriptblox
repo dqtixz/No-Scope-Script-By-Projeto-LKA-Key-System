@@ -1247,9 +1247,8 @@ It's that simple! We hope you enjoy your trial, redeem more if you like after yo
    local speed = Value1
             -- made By projeto lka scriptblox.com --
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/REDzHUB/LibraryV2/main/redzLib")))()
-wait(0.1)
 local l = loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/ui-libraries/main/dxhooknotify/src.lua", true))()
-wait(1)
+
 MakeWindow({
   Hub = {
     Title = "Projeto LKA - No Scope (2021)",
