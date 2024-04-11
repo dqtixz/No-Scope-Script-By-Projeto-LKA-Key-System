@@ -1241,8 +1241,9 @@ Progress through the two links like normal, without using bypassing software or 
  Enjoy your trial!
 It's that simple! We hope you enjoy your trial, redeem more if you like after your trial has expired
 ]]
+  
    
-     local distance = Value3
+    local distance = Value3
    local height = Value2
    local speed = Value1
             -- made By projeto lka scriptblox.com --
@@ -1446,7 +1447,7 @@ SetLabel(Label, "Loading ServerScript... (25394/28439) ⚙")
 wait(0.1)
 SetLabel(Label, "Loading ServerScript... (28439/28439) ⚙")
 wait(0.1)
-l:Notify("local Players 👥","Sucess Load !",3)
+l:Notify("local ServerScript ⚙","Sucess Load !",3)
 wait(0.1)
 SetLabel(Label, "Loading ServerScript... Finish ⚙")
 wait(1)
@@ -1459,6 +1460,8 @@ wait(0.1)
 SetLabel(Label, "Loading local Players... (759/834) 👥")
 wait(0.1)
 SetLabel(Label, "Loading local Players... (834/834) 👥")
+wait(0.1)
+l:Notify("local Players 👥","Sucess Load !",3)
 wait(0.1)
 SetLabel(Label, "Loading local Players... Finish 👥")
 wait(1)
@@ -1473,7 +1476,7 @@ wait(0.1)
 l:Notify("Correct Key 🔑","Loading Script...",5)
 wait(1)
 SetLabel(Label, "Features;")
-wait(3)
+wait(1)
 
 local Paragraph = AddParagraph(Main, {"Made By Projeto LKA x F Hub", "Current In Beta Script"})
 
@@ -1550,7 +1553,13 @@ l:Notify("Script Load !","Aim",3)
 wait(0.1)
 local Main = MakeTab({Name = "Aim (Torso)"})
 wait(0.1)
-local Paragraph = AddParagraph(Main, {"Script Only WallCheck No Team Check !", "Aim (Head, Torso) Small, Medium, Big - Esp Player Speed, Inf Jump"})
+AddButton(Main, {
+  Name = "Status: Patched",
+  Callback = function()
+print("Aim (Torso) - Patched")
+ end
+})
+--[[local Paragraph = AddParagraph(Main, {"Script Only WallCheck No Team Check !", "Aim (Head, Torso) Small, Medium, Big - Esp Player Speed, Inf Jump"})
 wait(1)
 AddButton(Main, {
   Name = "Aim Small",
@@ -1614,7 +1623,7 @@ wait(0.1)
 l:Notify("Script Load !","Aim",3)
  end
 })
-wait(0.1)
+wait(0.1)]]
 local Main = MakeTab({Name = "Hitbox"})
 wait(0.1)
 AddTextBox(Main, {
@@ -2038,6 +2047,61 @@ l:Notify("Visual Script Load","Esp (Line)",3)
 end
 })
 
+AddButton(Main, {
+  Name = "Esp Highlight",
+  Callback = function()
+ local FillColor = Color3.fromRGB(65,255,0)
+local DepthMode = "AlwaysOnTop"
+local FillTransparency = 0.5
+local OutlineColor = Color3.fromRGB(255,255,255)
+local OutlineTransparency = 0
+
+local CoreGui = game:FindService("CoreGui")
+local Players = game:FindService("Players")
+local lp = Players.LocalPlayer
+local connections = {}
+
+local Storage = Instance.new("Folder")
+Storage.Parent = CoreGui
+Storage.Name = "Highlight_Storage"
+
+local function Highlight(plr)
+    local Highlight = Instance.new("Highlight")
+    Highlight.Name = plr.Name
+    Highlight.FillColor = FillColor
+    Highlight.DepthMode = DepthMode
+    Highlight.FillTransparency = FillTransparency
+    Highlight.OutlineColor = OutlineColor
+    Highlight.OutlineTransparency = 0
+    Highlight.Parent = Storage
+
+    local plrchar = plr.Character
+    if plrchar then
+        Highlight.Adornee = plrchar
+    end
+
+    connections[plr] = plr.CharacterAdded:Connect(function(char)
+        Highlight.Adornee = char
+    end)
+end
+
+Players.PlayerAdded:Connect(Highlight)
+for i,v in next, Players:GetPlayers() do
+    Highlight(v)
+end
+
+Players.PlayerRemoving:Connect(function(plr)
+    local plrname = plr.Name
+    if Storage[plrname] then
+        Storage[plrname]:Destroy()
+    end
+    if connections[plr] then
+        connections[plr]:Disconnect()
+    end
+end)
+end
+})
+
 local Main = MakeTab({Name = "Extras"})
 wait(0.1)
 
@@ -2142,6 +2206,1039 @@ bambam.Force = Vector3.new(power,0,power)
 bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
     
   end
+})
+
+AddButton(Main, {
+  Name = "Music Player V2",
+  Callback = function()
+    --[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+-- Ohio moonsecv3 or moonsecv4 lol --
+
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/REDzHUB/LibraryV2/main/redzLib")))()
+wait(0.1)
+local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lobox920/Notification-Library/Main/Library.lua"))()
+wait(1)
+NotificationLibrary:SendNotification("Success", "Script Load !", 3)
+wait(0.1)
+NotificationLibrary:SendNotification("Warning", "No Work Possible Audio Patched", 3)
+wait(1)
+NotificationLibrary:SendNotification("Info", "Made by dqtixz", 3)
+wait(1)
+NotificationLibrary:SendNotification("Info", "please follow on scriptblox.com", 3)
+wait(1)
+NotificationLibrary:SendNotification("Info", "For More Scripts !", 3)
+wait(0.1)
+NotificationLibrary:SendNotification("Info", "No Key now comesoon key !", 3)
+wait(1)
+NotificationLibrary:SendNotification("Warning", "Loading...", 3)
+wait(3)
+MakeWindow({
+  Hub = {
+    Title = "Music Player",
+    Animation = "By Projeto LKA"
+  },
+  Key = {
+    KeySystem = false, -- comesoon lol or no bruh?
+    Title = "Key System",
+    Description = "Easy Get key",
+    KeyLink = "https://pastefy.app/W21NStPA/raw",
+    Keys = {"None"},
+    Notifi = {
+      Notifications = true,
+      CorrectKey = "Running the Script...",
+      Incorrectkey = "The key is incorrect",
+      CopyKeyLink = "Copied to Clipboard"
+    }
+  }
+})
+
+local Main = MakeTab({Name = "Logs"})
+
+AddButton(Main, {
+  Name = "Logs",
+  Callback = function()
+    print('Logs")')
+  end
+})
+
+AddButton(Main, {
+  Name = "Version: 0.0.2",
+  Callback = function()
+    
+  end
+})
+
+AddButton(Main, {
+  Name = "50+ Audios Add (Loud)",
+  Callback = function()
+    print("Audios")
+  end
+})
+
+AddButton(Main, {
+  Name = "possible key system reason: hours to made",
+  Callback = function()
+    print("key system")
+  end
+})
+
+local Main = MakeTab({Name = "Audios Loud"})
+
+AddButton(Main, {
+  Name = "CyberShot hot",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6844230235"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "akkkkkkkk",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6674053789"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "ambuent rain forest!!",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6893776529"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "Beat2",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6707901601"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "beep boop boop beep",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6991661856"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "bell",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6937042327"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "bell_sfx.ogg",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6984999899"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "bruh (unkwown pitch)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6953898257"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "ButtonPress_53",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6841685130"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "camera click",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6819593773"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "cartoony",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6933147325"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+local Main = MakeTab({Name = "Louds 2 (Rizz)"})
+
+AddButton(Main, {
+  Name = "Guitar Sound",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6685433021"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "Rare Audio",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6970996018"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "Lacoste",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6868100434"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "Rio",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6896624865"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "Favela",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6953866301"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "explode (rare)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6847929757"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "fresh (rare)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6688246112"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "Record (rare)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6917155909"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "Pink Guy (rare)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6670954642"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "Click_32 (rare)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6845637094"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "keybroad pess (rare)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6959548175"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "rizz (rare)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6964753170"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "brook pop",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6823597327"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "luci?? rare",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6823597327"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "barbie",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6689498326"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "doom 1",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6676732301"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "doom 2",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6688246112"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "doom 3",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6709587570"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "my intro",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6695430066"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "oof (doom real)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6834218705"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+local Main = MakeTab({Name = "Loud 3 "})
+
+AddButton(Main, {
+  Name = "pew sfx (ohio)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://7014573768"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "Project Heaven (???)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://7006487793"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "rizz (???)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6529070845"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "vocal (lol)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6813220211"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "xbox_one",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6846153394"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "mario bro 2 (bonus)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6753817247"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "le Billet (bonus)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6753817247"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "Pickle (bonus)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6603785846"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "mine craft - chest (bonus)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6770303644"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "meow funny (bonus)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6680495507"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "ding_1 (vibe)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6902400044"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "damage critical (rare)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6896306675"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "play boi (rare)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6681840651"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "play boi (rare)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6681840651"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "vibe (possible repeat music)",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://6924735395"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+local Main = MakeTab({Name = "audios intro"})
+
+AddButton(Main, {
+  Name = "PolyBridge12",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://8418797428"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "ultim _ 2503",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://5195797557"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "D4SHIE",
+  Callback = function()
+
+local music = Instance.new("Sound", game.Workspace)
+
+music.SoundId = "rbxassetid://7991195102"
+
+music.Volume = 1
+
+music.Looped = false
+
+music.PlayOnRemove = false
+
+music:Play()
+
+end
+})
+
+AddButton(Main, {
+  Name = "i delete 10 intros sorry lol",
+  Callback = function()
+    
+end
+})
+
+AddButton(Main, {
+  Name = "new intros comesoon !",
+  Callback = function()
+    
+end
+})
+
+-- G7D4W9A8Q3J2L5H6R9I1T4Y7K8O6PF9X2N5S1ER3A6U8Z2Y --
+    end
 })
 
 --[[ Authenticate using Discord
